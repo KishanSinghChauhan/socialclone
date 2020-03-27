@@ -15,16 +15,7 @@ module.exports.profile = function(req,res){
 }
 
 module.exports.update = async function(req,res){
-      //     if(req.user.id == req.params.id){
-//         User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
-            
-//         return res.redirect('back');
-
-//     });
-// }else{
-//     return res.status(401).send('Unauthorized');
-// }
-// }
+    
     if(req.user.id == req.params.id){
         try{
             let user = await User.findById(req.params.id);
@@ -116,22 +107,4 @@ module.exports.destroySession = function(req,res){
     return res.redirect('/');
 }
 
-//get the sign in data
-
-// module.exports.createSession = function(req,res){
-//    User.findOne({email : req.body.email},function(err,user){
-//        if(err){
-//            console.log('error in finding user in sign in'); return
-//        }
-//        if(user){
-//            if(user.password !=req.body.password){
-//                return res.redirect('back');
-//            }
-//            res.cookie('user_id',user.id);
-//            return res.redirect('/users/profile');
-//        }else{
-//            return res.redirect('back');
-//        }
-//    });
-// }
 

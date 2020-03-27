@@ -3,7 +3,7 @@ const app = express();
 
 const cookieParser = require('cookie-parser');
 
-const port = 8000;
+const port = 8005;
 
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
@@ -14,6 +14,8 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport_local_strategy');
+const passportJWT = require('./config/passport_jwt_strategy');
+
 
 const MongoStore = require('connect-mongo')(session);
 
